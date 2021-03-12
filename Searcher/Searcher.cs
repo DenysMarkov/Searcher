@@ -18,9 +18,9 @@ namespace Searcher
             }
 
             bool isContainDifferentElem = default;
-            int result = inputArray[0];
+            int result = int.MinValue;
 
-            for (int i = 1, maxnumber = result; i < inputArray.Length; i++)
+            for (int i = 1, maxnumber = inputArray[0]; i < inputArray.Length; i++)
             {
                 if (inputArray[i].CompareTo(maxnumber) != 0)
                 {
@@ -30,6 +30,10 @@ namespace Searcher
                     {
                         result = maxnumber;
                         maxnumber = inputArray[i];
+                    }
+                    else if (inputArray[i] > result)
+                    {
+                        result = inputArray[i];
                     }
                 }
             }
